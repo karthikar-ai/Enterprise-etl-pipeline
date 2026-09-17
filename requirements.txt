@@ -2,3 +2,4 @@ pydantic
 python-dotenv
 requestsgit statusgit status
 tenacity
+boto3
