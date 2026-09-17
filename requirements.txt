@@ -1,3 +1,4 @@
 pydantic
 python-dotenv
-requestsgit status
+requestsgit statusgit status
+tenacity
