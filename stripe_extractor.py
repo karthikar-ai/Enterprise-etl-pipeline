@@ -1,6 +1,9 @@
 import requests
 from config import STRIPE_API_KEY
 
+import requests
+from config import STRIPE_API_KEY
+
 
 def fetch_stripe_customers():
     url = "https://api.stripe.com/v1/customers"
@@ -9,8 +12,31 @@ def fetch_stripe_customers():
         "Authorization": f"Bearer {STRIPE_API_KEY}"
     }
 
-    response = requests.get(url, headers=headers)
+    customers = []
+    starting_after = None
 
-    response.raise_for_status()
+    while True:
+        params = {
+            "limit": 100
+        }
 
-    return response.json()
+        if starting_after:
+            params["starting_after"] = starting_after
+
+        response = requests.get(
+            url,
+            headers=headers,
+            params=params
+        )
+
+        response.raise_for_status()
+
+        data = response.json()
+        customers.extend(data["data"])
+
+        if not data["has_more"]:
+            break
+
+        starting_after = data["data"][-1]["id"]
+
+    return customers
