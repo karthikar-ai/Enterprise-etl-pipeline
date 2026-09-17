@@ -9,8 +9,20 @@ def fetch_salesforce_customers():
         "Authorization": f"Bearer {SALESFORCE_API_KEY}"
     }
 
-    response = requests.get(url, headers=headers)
+    customers = []
+    next_url = url
 
-    response.raise_for_status()
+    while next_url:
+        response = requests.get(next_url, headers=headers)
 
-    return response.json()
+        response.raise_for_status()
+
+        data = response.json()
+        customers.extend(data.get("records", []))
+
+        next_url = data.get("nextRecordsUrl")
+
+        if next_url and next_url.startswith("/"):
+            next_url = f"https://api.salesforce.com{next_url}"
+
+    return customers
