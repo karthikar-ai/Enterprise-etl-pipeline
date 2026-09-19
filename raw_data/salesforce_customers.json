@@ -1,0 +1,10 @@
+{
+  "records": [
+    {
+      "id": "SF001",
+      "name": "Test User",
+      "email": "test@example.com"
+    }
+  ],
+  "nextRecordsUrl": null
+}
