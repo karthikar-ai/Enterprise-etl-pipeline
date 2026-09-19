@@ -6,4 +6,5 @@ data = {
     "email": "test@example.com"
 }
 
-print("S3 upload function is ready.")
+# S3 upload will be tested when AWS credentials are available.
+print("Raw JSON data prepared for S3 upload.")
