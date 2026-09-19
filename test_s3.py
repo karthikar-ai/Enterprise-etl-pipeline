@@ -6,5 +6,5 @@ data = {
     "email": "test@example.com"
 }
 
-# S3 upload will be tested when AWS credentials are available.
 print("Raw JSON data prepared for S3 upload.")
+print("Data:", data)
