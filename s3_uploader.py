@@ -13,3 +13,10 @@ def upload_raw_data(data, bucket_name, file_name):
     )
 
     print(f"Raw data uploaded to S3: {file_name}")
+
+
+def upload_json_file(file_path, bucket_name, s3_key):
+    with open(file_path, "r") as file:
+        data = json.load(file)
+
+    upload_raw_data(data, bucket_name, s3_key)
