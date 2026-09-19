@@ -6,3 +6,4 @@ load_dotenv()
 
 STRIPE_API_KEY = os.getenv("STRIPE_API_KEY")
 SALESFORCE_API_KEY = os.getenv("SALESFORCE_API_KEY")
+S3_BUCKET_NAME = os.getenv("S3_BUCKET_NAME")
