@@ -3,3 +3,4 @@ python-dotenv
 requestsgit statusgit status
 tenacity
 boto3
+moto[s3]
