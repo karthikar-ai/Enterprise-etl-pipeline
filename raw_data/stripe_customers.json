@@ -1,0 +1,10 @@
+{
+  "data": [
+    {
+      "id": "cus_test_001",
+      "name": "Test User",
+      "email": "test@example.com"
+    }
+  ],
+  "has_more": false
+}
