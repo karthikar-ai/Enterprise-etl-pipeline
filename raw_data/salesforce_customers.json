@@ -3,7 +3,8 @@
     {
       "id": "SF001",
       "name": "Test User",
-      "email": "test@example.com"
+      "email": "test@example.com",
+      "created_at": "2026-09-19T18:00:00"
     }
   ],
   "nextRecordsUrl": null

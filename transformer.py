@@ -16,4 +16,11 @@ def transform_json_file(file_path):
     with open(file_path, "r") as file:
         data = json.load(file)
 
-    return transform_customers(data["data"])   
+    return transform_customers(data["data"])
+def transform_salesforce_json_file(file_path):
+    import json
+
+    with open(file_path, "r") as file:
+        data = json.load(file)
+
+    return transform_customers(data["records"])         
