@@ -1,0 +1,19 @@
+from models import Customer
+def transform_customer(customer):
+    transformed = {
+        "customer_id": customer.get("id"),
+        "name": customer.get("name", "").strip(),
+        "email": customer.get("email", "").strip().lower(),
+        "created_at": customer.get("created_at")
+    }
+
+    return Customer(**transformed)
+def transform_customers(customers):
+    return [transform_customer(customer) for customer in customers]
+def transform_json_file(file_path):
+    import json
+
+    with open(file_path, "r") as file:
+        data = json.load(file)
+
+    return transform_customers(data["data"])   
